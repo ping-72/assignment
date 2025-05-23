@@ -36,12 +36,26 @@ export const ImageCarouselSection = (): JSX.Element => {
 
   const totalSlides = images.length;
   const [currentSlide, setCurrentSlide] = React.useState(1);
-  const dots = Array(5).fill(0);
+  const [emblaApi, setEmblaApi] = React.useState<any>(null);
+  const dots = Array(totalSlides).fill(0);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => {
+      setCurrentSlide(emblaApi.selectedScrollSnap() + 1);
+    };
+    emblaApi.on("select", onSelect);
+    // Set initial slide
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   return (
     <Carousel
       className="relative h-60 rounded-3xl overflow-hidden"
-      onSelect={(event: any) => setCurrentSlide(event + 1)}
+      setApi={setEmblaApi}
     >
       <div className="absolute top-4 right-4 z-10">
         <Badge className="flex items-center gap-2 p-2 bg-[#000000bf] rounded-lg">
