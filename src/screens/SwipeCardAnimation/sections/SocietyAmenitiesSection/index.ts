@@ -1,0 +1,1 @@
+export { SocietyAmenitiesSection } from "./SocietyAmenitiesSection";

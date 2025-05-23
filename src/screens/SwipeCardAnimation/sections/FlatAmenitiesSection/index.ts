@@ -1,0 +1,1 @@
+export { FlatAmenitiesSection } from "./FlatAmenitiesSection";

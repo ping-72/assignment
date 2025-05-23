@@ -1,0 +1,39 @@
+import React from "react";
+import { Badge } from "../../../../components/ui/badge";
+
+export const AmenitiesSection = (): JSX.Element => {
+  // Define amenities data for mapping
+  const amenities = [
+    { icon: "/exercise.svg", label: "AC" },
+    { icon: "/exercise-2.svg", label: "Wardrobe" },
+    { icon: "/exercise-1.svg", label: "Study Table" },
+    { icon: "/exercise-3.svg", label: "AC" },
+  ];
+
+  return (
+    <section className="flex flex-col gap-2 w-full">
+      <h3 className="font-medium text-naturalnatural-8 text-xs [font-family:'Satoshi-Medium',Helvetica]">
+        Room Amenities
+      </h3>
+
+      <div className="flex items-start gap-4 w-full overflow-x-auto">
+        {amenities.map((amenity, index) => (
+          <Badge
+            key={index}
+            variant="outline"
+            className="flex items-center gap-1 p-2 bg-[#fef4e0] rounded-full border-none"
+          >
+            <img
+              className="w-4 h-4"
+              alt={`${amenity.label} icon`}
+              src={amenity.icon}
+            />
+            <span className="font-medium text-naturalnatural-13 text-xs tracking-[0.05px] [font-family:'Satoshi-Medium',Helvetica]">
+              {amenity.label}
+            </span>
+          </Badge>
+        ))}
+      </div>
+    </section>
+  );
+};
