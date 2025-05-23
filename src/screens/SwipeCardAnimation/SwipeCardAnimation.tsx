@@ -125,13 +125,12 @@ export const SwipeCardAnimation = (): JSX.Element => {
           {/* Main content area */}
           <main className="w-full pt-16">
             <div className="max-w-[1240px] mx-auto relative">
-              {/* Card stack effect */}
-              <div className="absolute w-[1000px] h-[390px] top-0 left-[120px] bg-[#fef4e0] rounded-[40px] border-[0.97px] border-solid border-[#f1f1f1] shadow-[0px_-3.88px_23.25px_#0000001a] -z-10" />
-              <div className="absolute w-[1096px] h-[391px] top-[15px] left-[72px] bg-[#fef4e0] rounded-[40px] border-[0.97px] border-solid border-[#f1f1f1] shadow-[0px_-3.88px_23.25px_#0000001a] -z-20" />
-              <div className="absolute w-[1192px] h-[390px] top-[31px] left-6 bg-[#fef4e0] rounded-[40px] border-[0.97px] border-solid border-[#f1f1f1] shadow-[0px_-3.88px_23.25px_#0000001a] -z-30" />
-
+              {/* Fake stacked cards for illusion */}
+              <Card className="absolute w-[1000px] h-[390px] top-[-70px] left-[120px] bg-[#fef4e0] rounded-[40px] border-[0.97px] border-solid border-[#f1f1f1] shadow-[0px_-3.88px_23.25px_#0000001a] scale-95 z-0" />
+              <Card className="absolute w-[1096px] h-[391px] top-[-55px] left-[72px] bg-[#fef4e0] rounded-[40px] border-[0.97px] border-solid border-[#f1f1f1] shadow-[0px_-3.88px_23.25px_#0000001a] scale-98 z-0" />
+              <Card className="absolute w-[1192px] h-[390px] top-[-39px] left-6 bg-[#fef4e0] rounded-[40px] border-[0.97px] border-solid border-[#f1f1f1] shadow-[0px_-3.88px_23.25px_#0000001a] z-0" />
               {/* Main card */}
-              <Card className="flex flex-col w-full h-[528px] gap-4 p-6 bg-naturalnatural-3 rounded-[40px] shadow-[0px_4px_10px_#00000026]">
+              <Card className="flex flex-col w-full h-[528px] gap-4 p-6 bg-naturalnatural-3 rounded-[40px] shadow-[0px_4px_10px_#00000026] relative z-10">
                 <CardContent className="p-0 flex flex-col gap-4 h-9/10">
                   {/* Top section with image carousel and contact info */}
                   <div className="flex items-start gap-4 w-full overflow-y-auto">
